@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}{{ site.title }}{% endblock %}
+
+{% block nav_index %}
+    class="current"
+{% endblock %}
+
+{% block content %}
+    {% if configs.posts and configs.files %}
+        {% if posts %}
+        <div class="primary">{% include 'include/posts_list.html' %}</div>
+        {% include 'include/sider.html' %}
+                    {% if site.configs.duoshuo %}
+                    <script type="text/javascript">
+                    var duoshuoQuery = {short_name:"{{ site.configs.duoshuo }}"};
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';ds.async = true;
+                        ds.src = 'http://static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                    </script>
+        {% endif %}
+        {% elif files %}
+            {% include 'include/files_list.html' %}
+        {% endif %}
+    {% elif configs.posts %}
+<div class="primary">{% include 'include/posts_list.html' %}</div>
+{% include 'include/sider.html' %}
+    {% elif configs.files %}
+        {% include 'include/files_list.html' %}
+    {% endif %}
+{% endblock %}

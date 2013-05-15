@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if request.path == '/pages/links' %}
+        Links Friends
+    {% elif request.path == '/pages/about' %}
+        About Me
+    {% else %}
+        {{ post.title }}
+    {% endif %}
+
+{% endblock %}
+
+
+{% block content %}
+    {% if request.path == '/pages/links' %}
+<article class="post">{{ post.content }}</article>
+{% if site.configs.duoshuo %}
+<div class="ds-thread"></div>
+<script type="text/javascript">
+            var duoshuoQuery = {short_name:"{{ site.configs.duoshuo }}"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = 'http://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+{% endif %}
+    {% else %}
+<article class="post">{{ post.content }}</article>
+{% endif %}
+{% endblock %}

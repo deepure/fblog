@@ -1,0 +1,36 @@
+<div class="sider">
+    {% if site.configs.weibo %}
+    <aside>
+        <iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=0&{{ site.configs.weibo }}&dpc=1"></iframe>
+    </aside>
+    {% endif %}
+    {% if site.configs.rpost %}
+    <aside>
+        <h3><i class="icon-magic"></i> Recent Article</h3>
+        <ul>
+        {% set rposts= get_posts('/',site.configs.rpost) %}
+            {% for post in rposts %}
+                <li class="listing-item">
+                    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </aside>
+    {% endif %}
+    {% if site.configs.duoshuo %}
+    <aside>
+        <h3> <i class="icon-comments"></i>
+            Recent Comments
+        </h3>
+        <ul class="ds-recent-comments" data-show-title="0" data-show-time="0" data-show-avatars="0"></ul>
+    </aside>
+    {% endif %}
+    <aside>
+        <h3>Tags</h3>
+        <div>
+            {% for tag_name, tag_count in site.tags %}
+            <a href="/tags/{{tag_name}}">{{ tag_name }}</a>
+            {% endfor %}
+        </div>
+    </aside>
+</div>
