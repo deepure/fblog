@@ -52,8 +52,13 @@
         {% endif %}
     </div>
 
-     <div id="disqus_thread" class="comments"></div>
-
-    {{ get_text_file('comment_js').raw_content }}
+    <div id="disqus_thread" class="comments"></div>
+    {% if site.configs.duoshuo %}
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="ds-thread"></div>          
+        <!-- Duoshuo Comment END -->
+    {% else %}
+        {{ get_text_file('comment_js').raw_content }}
+    {% endif %}
 
 {% endblock %}

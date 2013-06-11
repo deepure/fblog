@@ -30,7 +30,13 @@
         <div class="entry">{{ post| auto_content }}</div>
     </article>
     <div id="disqus_thread" class="comments"></div>
+    {% if site.configs.duoshuo %}
+        <!-- Duoshuo Comment BEGIN -->
+        <div class="comment-wrap"><div class="ds-thread"></div></div>            
+        <!-- Duoshuo Comment END -->
+    {% else %}
     <div class="comment-wrap">{{ get_text_file('comment_js').raw_content }}</div>
+    {% endif %}
 </div>
 {% include 'include/sider.html' %}
 {% endblock %}
