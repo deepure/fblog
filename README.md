@@ -8,6 +8,7 @@ A theme for farbox。
 ---
 ###site.md配置说明  
 
+	title: 衣不如新
     weibo: uid=1932250983&verifier=a0fe8b1d   
     rpost: 8  
     duoshuo: motype  
