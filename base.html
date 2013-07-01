@@ -22,7 +22,7 @@
     <div id="wrap">
         <header id="header" class="cf">
             <div class="logo">
-                <a href="/">{{ site.title or 'THIS IS MY SITE'}}</a>
+                <a href="/">{{ site.configs.title or site.title}}</a>
             </div>
             {% if has('posts') %}
             <nav class="main-nav">
