@@ -1,4 +1,7 @@
-fblog
+key: fblog-deepure  
+title: fblog  
+domain: http://mysite.com  
+
 =====
 
 A theme for farbox。
