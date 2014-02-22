@@ -2,10 +2,10 @@ key: fblog-deepure
 title: fblog  
 domain: http://mysite.com  
 
-======
+=======
 
-A theme for farbox。
-暂时未兼容farbox自带评论，因为用不到这部分，更新时间不定。
+A theme for farbox。  
+暂时未兼容farbox自带评论，因为用不到这部分，更新时间不定。   
 
 
 ---
