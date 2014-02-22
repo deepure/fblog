@@ -8,7 +8,7 @@
                 "title_zh_cn": "网站信息",
                 "cells": [
                     {
-                        "parts_per_line": 2,
+                        "parts_per_line": 1,
                         "parts": [
                             {
                                 "key": "title",
@@ -18,10 +18,16 @@
                                 "model": "text"
                             },
                             {
-                                "key": "domain",
-                                "title": "Domain (independent domain points CNAME to park.farbox.com)",
-                                "title_zh_cn": "域名 (独立域名CNAME需指向park.farbox.com)"
- 
+                                "title": "Site keywords",
+                                "title_zh_cn":"网站关键字",
+                                "key": "keywords",
+                                "model":"textarea"
+                            },
+                            {
+                                "title": "Site Description",
+                                "title_zh_cn":"网站描述",
+                                "key": "description",
+                                "model":"textarea"
                             }
                         ]
                     }
@@ -73,6 +79,60 @@
                                 "title_zh_cn": "相册根目录",
                                 "model": "select",
                                 "options": "root"
+                            },
+                            {
+                                "key": "show_toc",
+                                "title": "Table of Contents",
+                                "title_zh_cn": "正文自动目录",
+                                "model": "select",
+                                "default_value": "no",
+                                "options": [
+                                    {
+                                        "value": "no",
+                                        "title": "Not Display"
+                                    },
+                                    {
+                                        "value": "yes",
+                                        "title": "Display"
+                                    }
+                                ],
+                                "options_zh_cn": [
+                                    {
+                                        "value": "no",
+                                        "title": "不显示"
+                                    },
+                                    {
+                                        "value": "yes",
+                                        "title": "显示"
+                                    }
+                                ]
+                            },
+                             {
+                                "key": "mathjax",
+                                "title": "Use MathJax",
+                                "title_zh_cn": "使用MathJax",
+                                "model": "select",
+                                "default_value": "no",
+                                "options": [
+                                    {
+                                        "value": "no",
+                                        "title": "No"
+                                    },
+                                    {
+                                        "value": "yes",
+                                        "title": "Yes"
+                                    }
+                                ],
+                                "options_zh_cn": [
+                                    {
+                                        "value": "no",
+                                        "title": "不"
+                                    },
+                                    {
+                                        "value": "yes",
+                                        "title": "使用"
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -122,17 +182,17 @@
                 ]
             },
             {
-                "title": "analytics",
-                "title_zh_cn":"网站统计",
+                "title": "Insert Scripts",
+                "title_zh_cn":"插入脚本",
                 "cells":[
                     {
                         "parts_per_line": 1,
                         "parts":[
                             {
-                                "key": "gid",
-                                "title": "Google Analytics ID",
-                                "title_zh_cn": "谷歌统计ID",
-                                "default_value": "looks like US-123456"
+                                "key": "scripts_per_page",
+                                "title": "Insert following code into every HTML page.",
+                                "title_zh_cn": "将下面的代码插入到每个HTML页面中",
+                                "model":"textarea"
                             }
                         ]
                     }
@@ -186,6 +246,23 @@
                 ]
             },
             {
+                "title": "Bind Domain",
+                "title_zh_cn": "域名绑定",
+                "cells": [
+                    {
+                        "parts_per_line": 2,
+                        "parts": [
+                            {
+                                "key": "domain",
+                                "title": "Domain  <a target='_blank' href='http://doc.farbox.com/read/domain'> need help?</a>",
+                                "title_zh_cn": "域名 <a target='_blank' href='http://doc.farbox.com/read/domain'> need help?</a>"
+
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 "title": "Multi Domains Binding",
                 "title_zh_cn":"多域名绑定",
                 "cells":[
@@ -202,39 +279,7 @@
                         ]
                     }
                 ]
-            },
-            {
-                "title": "Site keywords",
-                "title_zh_cn":"网站关键字",
-                "cells":[
-                    {
-                        "parts_per_line": 1,
-                        "parts":[
-                            {
-                                "key": "keywords",
-                                "model":"textarea"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "title": "Site Description",
-                "title_zh_cn":"网站描述",
-                "cells":[
-                    {
-                        "parts_per_line": 1,
-                        "parts":[
-                            {
-                                "key": "raw_content",
-                                "model":"textarea"
-                            }
-                        ]
-                    }
-                ]
             }
-
- 
         ]
     },
     {
@@ -271,6 +316,12 @@
                                 "title": "duoshuo ID",
                                 "title_zh_cn": "多说ID",
                                 "default_value": "duoshuoid"
+                            },
+                            {
+                                "key": "rpost",
+                                "title": "sidebar recent comments",
+                                "title_zh_cn": "边栏多说评论条数",
+                                "default_value": "8"
                             }
                         ]
                     }
