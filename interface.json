@@ -26,7 +26,7 @@
                             {
                                 "title": "Site Description",
                                 "title_zh_cn":"网站描述",
-                                "key": "description",
+                                "key": "raw_content",
                                 "model":"textarea"
                             }
                         ]
